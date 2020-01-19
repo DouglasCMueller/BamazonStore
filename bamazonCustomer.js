@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
 });
 connection.connect(function (err) {
     if (err) throw err;
-    console.log("connected as id " + connection.threadId);
+    // console.log("connected as id " + connection.threadId);
     displayProducts();
 });
 
@@ -48,14 +48,13 @@ function customerPurchase(res) {
         type: "input",
         name: "quantity",
         message: "How many units do you wish to purchase?",
-    }
-    ])
+    }])
         .then(function (answers) {
             var updatedStockQuantity;
 
-            var useritemId = answers.itemId;
+            var userItemId = answers.itemId;
             var userQuantity = answers.quantity;
-            var query = "Select stock_quantity,price,product_name FROM products WHERE item_id = " + useritemId;
+            var query = "Select stock_quantity,price,product_name FROM products WHERE item_id = " + userItemId;
             connection.query(query, function (err, res) {
                 if (err) throw err;
                 else {
