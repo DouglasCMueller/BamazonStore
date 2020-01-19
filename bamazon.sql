@@ -10,7 +10,6 @@ CREATE TABLE products(
   price INT default 0,
   stock_quantity INT default 0,
   PRIMARY KEY (item_id)
-);
-SELECT * from products
-INSERT INTO products (product_name, department_name, price, stock_quantity)
+)
 
+SELECT * from products
