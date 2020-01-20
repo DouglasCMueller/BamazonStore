@@ -154,7 +154,7 @@ function managerAddNewProduct() {
         }
     ])
         .then(function (answers) {
-            console.log(answers)
+    
 
             connection.query(
                 "INSERT INTO products SET ?",
@@ -166,6 +166,7 @@ function managerAddNewProduct() {
                 },
                 function (err) {
                     if (err) throw err;
+        
                     console.log("Your product was added successfully.");
                     connection.end();
 

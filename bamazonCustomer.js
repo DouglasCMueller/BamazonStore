@@ -65,8 +65,6 @@ function customerPurchase(res) {
                         console.log(clc.magenta("You have purchased " + userQuantity + " " + res[0].product_name +
                             "\nfor a total cost of: $" + res[0].price * userQuantity));
 
-
-
                         var query = "UPDATE products SET stock_quantity = " +
                             updatedStockQuantity + " WHERE item_id = " + answers.itemId;
                         connection.query(query, function (err, res) {
