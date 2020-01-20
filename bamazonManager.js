@@ -154,7 +154,6 @@ function managerAddNewProduct() {
         }
     ])
         .then(function (answers) {
-    
 
             connection.query(
                 "INSERT INTO products SET ?",
@@ -162,11 +161,12 @@ function managerAddNewProduct() {
                     product_name: answers.product_name,
                     department_name: answers.department_name,
                     price: answers.price,
-                    stock_quantity: answers.stock_quantity
+                    stock_quantity: answers.stock_quantity,
+                    product_sales: 0
+
                 },
                 function (err) {
                     if (err) throw err;
-        
                     console.log("Your product was added successfully.");
                     connection.end();
 
