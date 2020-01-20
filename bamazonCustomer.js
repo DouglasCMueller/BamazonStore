@@ -60,7 +60,7 @@ function customerPurchase(res) {
                 if (err) throw err;
                 else {
 
-                    if (res[0].stock_quantity - userQuantity > 0) {
+                    if (res[0].stock_quantity - userQuantity >= 0) {
                         var quantityAtItemId = res[0].stock_quantity;
                         updatedStockQuantity = quantityAtItemId - userQuantity;
                         var totalPurchaseValue = userQuantity * res[0].price;
