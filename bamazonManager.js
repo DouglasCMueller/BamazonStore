@@ -52,12 +52,12 @@ function managerViewProductsForSale() {
         console.log(clc.red(" Current Inventory at Bamazon"));
         console.log(" ----------------------------------");
         var displayTableInventory = new Table({
-            head: ["Item ID", "Product Name", "Department Name", "Price", "Stock Quantity"],
-            colWidths: [10, 25, 25, 10, 20]
+            head: ["Item ID", "Product Name", "Department Name", "Price", "Stock Quantity", "product_sales"],
+            colWidths: [10, 25, 25, 10, 20, 25]
         });
         for (var i = 0; i < res.length; i++) {
             displayTableInventory.push(
-                [res[i].item_id, res[i].product_name, res[i].department_name, res[i].price, res[i].stock_quantity]
+                [res[i].item_id, res[i].product_name, res[i].department_name, res[i].price, res[i].stock_quantity, res[i].product_sales]
             );
         }
         console.log(displayTableInventory.toString());

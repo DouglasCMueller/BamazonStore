@@ -24,13 +24,13 @@ var displayProducts = function () {
         console.log(clc.red(" Current Inventory at Bamazon"));
         console.log(" ----------------------------------");
         var displayTable = new Table({
-            head: ["Item ID", "Product Name", "Department Name", "Price", "Stock Quantity", "Product Sales"],
-            colWidths: [10, 25, 25, 10, 20, 25]
+            head: ["Item ID", "Product Name", "Department Name", "Price", "Stock Quantity"],
+            colWidths: [10, 25, 25, 10, 20]
         });
         for (var i = 0; i < res.length; i++) {
             displayTable.push(
                 [res[i].item_id, res[i].product_name,
-                res[i].department_name, res[i].price, res[i].stock_quantity, res[i].product_sales]
+                res[i].department_name, res[i].price, res[i].stock_quantity]
             );
         }
         console.log(displayTable.toString());
